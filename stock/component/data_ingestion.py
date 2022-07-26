@@ -2,14 +2,13 @@ from stock.entity.config_entity import DataIngestionConfig
 
 from stock.exception import StockException
 from stock.logger import logging
-from stock.entity.artifact_entity import DataIngestionArtifact
-# from stock.constant import DATASET_SCHEMA_COLUMNS_KEY
+
 import sys, os
 from nsepy import get_history
 from datetime import date
 import pandas as pd
 import shutil
-
+from stock.entity.artifact_entity import DataIngestionArtifact
 from datetime import datetime
 
 class DataIngestion:
@@ -64,7 +63,7 @@ class DataIngestion:
                 
             # logging.info(f"Download file from :[{stock_data_df}] into [{raw_file_path}]")
             # stock_data_df.to_csv(raw_file_path)
-            file_path= r"C:\Users\Lenovo\Investment Predictions-ML\stock\artifact\data_ingestion\2022-07-21-16-05-43\raw_data\SBIN"
+            file_path= r"C:\Users\arunk\OneDrive\Documents\GitHub\investment_prediction\stock\artifact\data_ingestion\2022-07-26-16-18-27\raw_data\SBIN"
             shutil.copy(file_path,raw_file_path)
 
             return raw_file_path
@@ -91,11 +90,13 @@ class DataIngestion:
             stock_data_frame['Date'] = pd.to_numeric(stock_data_frame["Date"])
 
             # filter the columns required
-            filtered_stock_df = stock_data_frame.drop(columns=['Symbol', 'Series', 'Prev Close','VWAP','Turnover', 
-                                                                'Trades', 'Deliverable Volume','%Deliverble'],axis=1)
-           
-            logging.info(f"Splitting data into train and test")
+            # filtered_stock_df =stock_data_frame.filter(['Date', 'Close', 'Prev Close','Open','High','Low', 'VWAP', 'Volume'])
             
+            filtered_stock_df = stock_data_frame.drop(['Symbol', 'Series', 'Last','Turnover', 'Trades', 'Deliverable Volume','%Deliverble'],axis=1)
+
+            filtered_stock_df.rename(columns = {'Prev Close':'Prev_Close'}, inplace = True)
+            logging.info(f"Splitting data into train and test")
+           
             sliced_train_set = filtered_stock_df.iloc[:987,:]
             sliced_test_set = filtered_stock_df.iloc[987:,:]
 

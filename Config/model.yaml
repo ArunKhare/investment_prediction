@@ -22,4 +22,20 @@ model_selection:
     search_param_grid:
       min_samples_leaf:
       - 4
-      
+  module_2:
+    class: KNeighborsRegressor
+    module: sklearn.neighbors
+    params:
+      weights: uniform
+    search_param_grid:
+      n_neighbors: 
+      - 5
+      - 2
+      algorithm:
+      - ball_tree
+      - kd_tree
+      p:
+      - 2
+      leaf_size:
+      - 10
+      - 3

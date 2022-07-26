@@ -1,20 +1,37 @@
 columns:
   Date: int
+  Close: float
+  Prev_Close: float
   Open: float
   High: float
   Low: float
-  Close: float
-  Last: float
+  VWAP: float
   Volume: int
-
-dataset_columns:
+    
+numerical_column:
   - Date
+  - Prev_Close
   - Open
   - High
   - Low
-  - Close
+  - VWAP
   - Volume
 
-target_column: Last
+target_column: Close
 
 stock_symbol: str
+
+# Symbol                 object
+# Series                 object
+# Prev Close            float64
+# Open                  float64
+# High                  float64
+# Low                   float64
+# Last                  float64
+# Close                 float64
+# VWAP                  float64
+# Volume                  int64
+# Turnover              float64
+# Trades                  int64
+# Deliverable Volume      int64
+# %Deliverble           float64

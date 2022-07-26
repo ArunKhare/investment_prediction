@@ -35,12 +35,10 @@ class DataTransformation:
 
             dataset_schema = read_yaml_file(file_path=schema_file_path)
 
-            # dataset_keys = dataset_schema[DATASET_SCHEMA_COLUMNS_KEY]
-            # dataset_columns= [*dataset_keys]
             dataset_columns = dataset_schema[SELECTED_SCHEMA_COLUMNS_KEY]
-            
+           
             scaler=MinMaxScaler(feature_range=(0,1))
-            # scaled_stock=scaler.fit_transform(stock)
+           
 
 
             pipeline = Pipeline(steps=[ ('imputer',  SimpleImputer(strategy='median')),

@@ -62,19 +62,11 @@ DATA_TRANSFORMATION_PROCESSING_FILE_NAME_KEY = "preprocessed_object_file_name"
 TARGET_COLUMN_KEY ="target_column"
 
 DATASET_SCHEMA_COLUMNS_KEY = "columns"
-SELECTED_SCHEMA_COLUMNS_KEY = "dataset_columns"
+SELECTED_SCHEMA_COLUMNS_KEY = "numerical_column"
 
-DATE = "Date"
-OPEN = "Open"
-HIGH = "High"
-LOW = "Low"
-CLOSE = "Close"
-LAST ="Last"
-VOLUME = "Volume"
 
 
 # Model Training related variables
-
 MODEL_TRAINER_ARTIFACT_DIR = "model_trainer"
 MODEL_TRAINER_CONFIG_KEY = "model_trainer_config"
 MODEL_TRAINER_TRAINED_MODEL_DIR_KEY = "trained_model_dir"
@@ -82,11 +74,10 @@ MODEL_TRAINER_TRAINED_MODEL_FILE_NAME_KEY = "model_file_name"
 MODEL_TRAINER_BASE_ACCURACY_KEY = "base_accuracy"
 MODEL_TRAINER_MODEL_CONFIG_DIR_KEY = "model_config_dir"
 MODEL_TRAINER_MODEL_CONFIG_FILE_NAME_KEY = "model_config_file_name"
-
-
 MODEL_EVALUATION_CONFIG_KEY = "model_evaluation_config"
 MODEL_EVALUATION_FILE_NAME_KEY = "model_evaluation_file_name"
 MODEL_EVALUATION_ARTIFACT_DIR = "model_evaluation"
+
 # Model Pusher config key
 MODEL_PUSHER_CONFIG_KEY = "model_pusher_config"
 MODEL_PUSHER_MODEL_EXPORT_DIR_KEY = "model_export_dir"

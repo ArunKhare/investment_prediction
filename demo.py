@@ -2,12 +2,23 @@ from stock.pipeline.pipeline import Pipeline
 from stock.exception import StockException
 from stock.logger import logging
 from stock.config.configuration import Configuartion
-# from stock.component.data_transformation import DataTransformation
+from stock.component.data_transformation import DataTransformation
 from stock.component.data_ingestion import DataIngestion 
+from stock.constant import get_current_time_stamp
+
 def main():
     try:
-        pipeline = Pipeline()
-        #pipeline.run_pipeline()
+        pipeline = Pipeline(config=Configuartion(current_time_stamp=get_current_time_stamp()))
+        if not Pipeline.experiment.running_status:
+            message = "Training started."
+            pipeline.start()
+        else:
+            message = "Training is already in progress."
+        context = {
+            "experiment": pipeline.get_experiments_status().to_html(classes='table table-striped col-12'),
+            "message": message
+        }
+        
         pipeline.run_pipeline()
         logging.info("main function execution completed.")
         # # data_validation_config = Configuartion().get_data_transformation_config()

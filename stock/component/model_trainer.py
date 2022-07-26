@@ -9,7 +9,6 @@ from stock.entity.model_factory import MetricInfoArtifact, ModelFactory,GridSear
 from stock.entity.model_factory import evaluate_regression_model
 
 
-
 class stockEstimatorModel:
     def __init__(self, preprocessing_object, trained_model_object):
         """
