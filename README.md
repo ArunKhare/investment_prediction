@@ -45,11 +45,6 @@ To check all version maintained by git
 git log
 ```
 
-To create version/commit all changes by git
-```
-git commit -m "message"
-```
-
 To send version/changes to github
 ```
 git push origin main
@@ -61,16 +56,19 @@ git remote -v
 ```
 BUILD DOCKER IMAGE
 -----------------------------------------
-docker build -t <image_name>:<tagname> .
+docker build -t <image_name>:<tagname> . # dot to bring in all the file in to the docker imagedocker 
 Note: Image name for docker must be lowercase
 '''''''''''''''''''
 To list docker image
 docker images
 '''''''''''''''''''
 Run docker image
-docker run -p 5000:5000 -e PORT=5000 8f36c20e9f11
+docker run -p 5000:5000 -e PORT=5000 b626bf4e7872  # passing a environment variable port=5000
 ''''''''''''''''''''
-To check running container in docker
+Run on web :
+localhost:5000
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+To check running containers in docker
 docker ps
 '''''''''''''''''
 Tos stop docker conatiner
@@ -82,6 +80,10 @@ python setup.py install
 
 pip install ipykernel
 
+To setup CI/CD Pipeine in heroku
+1. HEROKU_EMAIL
+2. HEROKU_API_KEY
+3. HEROKU_APP_NAME
 
 Preface
 'Investment prediction' here vis-a-vis Stock Market prediction  predict the stock's price considering various aspects of the stock market that can influence the price..
