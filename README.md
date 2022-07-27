@@ -84,9 +84,9 @@ To setup CI/CD Pipeine in heroku ;
 create a folder .github/workflows
 and file 'main.yaml'
 
-1. HEROKU_EMAIL
-2. HEROKU_API_KEY
-3. HEROKU_APP_NAME
+1. HEROKU_EMAIL: <emailid>
+2. HEROKU_API_KEY:<heroku api key>
+3. HEROKU_APP_NAME : stockprice_pred
 
 Preface
 'Investment prediction' here vis-a-vis Stock Market prediction  predict the stock's price considering various aspects of the stock market that can influence the price..
