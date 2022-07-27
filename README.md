@@ -10,20 +10,20 @@
 3. [VS Code IDE](https://code.visualstudio.com/download)
 4. [GIT cli](https://git-scm.com/downloads)
 
-
+-----------------------------
 Creating conda environment
-```
+-----------------------------
 conda create -n venv python==3.9 -y
 install ipykernel # jupyternotebook
 ```
 ```
 conda activate venv/
-
 ```
 pip install -r requirements.txt
 ```
-
-GIT:
+------------------------------
+Setting up GIT:
+------------------------------
 git init
 ```
 git add .
@@ -53,9 +53,9 @@ git push origin main
 To check remote url 
 ```
 git remote -v
-```
+--------------------------------
 BUILD DOCKER IMAGE
------------------------------------------
+--------------------------------
 docker build -t <image_name>:<tagname> . # dot to bring in all the file in to the docker imagedocker 
 Note: Image name for docker must be lowercase
 '''''''''''''''''''
@@ -67,20 +67,23 @@ docker run -p 5000:5000 -e PORT=5000 b626bf4e7872  # passing a environment varia
 ''''''''''''''''''''
 Run on web :
 localhost:5000
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'''''''''''''''''''
 To check running containers in docker
 docker ps
-'''''''''''''''''
+'''''''''''''''''''
 Tos stop docker conatiner
 docker stop <container_id>
--------------------------------------------
+'''''''''''''''''''
 
 python setup.py install
 ''''''''''''''''''''''''''
-
 pip install ipykernel
+-------------------------------------------
+To setup CI/CD Pipeine in heroku ;
+-------------------------------------------
+create a folder .github/workflows
+and file 'main.yaml'
 
-To setup CI/CD Pipeine in heroku
 1. HEROKU_EMAIL
 2. HEROKU_API_KEY
 3. HEROKU_APP_NAME
