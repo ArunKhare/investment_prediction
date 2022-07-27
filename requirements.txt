@@ -1,7 +1,8 @@
+python 3.9
 evidently
 flask
 dill
 nsepy
 matplotlib
 gunicorn
-# -e .
+-e .
