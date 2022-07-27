@@ -13,19 +13,11 @@
 
 Creating conda environment
 ```
-conda create -p venv python==3.7 -y
-conda install -c anaconda scikit-learn
-conda install PyYaml
-pip install gunicorn
+conda create -n venv python==3.9 -y
 install ipykernel # jupyternotebook
 ```
 ```
 conda activate venv/
-```
-OR 
-```
-conda activate venv
-```
 
 ```
 pip install -r requirements.txt
