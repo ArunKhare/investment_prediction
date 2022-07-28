@@ -16,14 +16,17 @@ Creating conda environment
 conda create -n venv python==3.9 -y
 install ipykernel # jupyternotebook
 ```
-```
-conda activate venv/
+conda activate venv
 ```
 pip install -r requirements.txt
 ```
 ------------------------------
 Setting up GIT:
 ------------------------------
+create git repository in github.com
+local folder requried: .gitignore
+CLi commands @ local project Root folder path:
+
 git init
 ```
 git add .
@@ -32,7 +35,8 @@ git commit -m "first commit"
 ''''''
 git remote add origin git@github.com:ArunKhare/Investment_prediction.git
 '''''''
-git push -u origin master
+git push -u origin master / git push origin
+
 
 > Note: To ignore file or folder from git we can write name of file/folder in .gitignore file
 
@@ -53,6 +57,31 @@ git push origin main
 To check remote url 
 ```
 git remote -v
+
+-------------------------------------------
+To setup CI/CD Pipeine with heroku ;
+-------------------------------------------
+local files required:
+    1. Dockerfile 
+    2. github\workflows\main.yaml
+
+create an app in Heroku
+copy the API key forom setting:
+
+1. HEROKU_EMAIL: <emailid>
+2. HEROKU_API_KEY:<heroku api key>
+3. HEROKU_APP_NAME : stockprice_pred
+
+run the app :
+open app in heroku
+app opens in browser .
+share the link in browser 
+-------------------------------------------
+
+********************************************************
+A separate execution with Docker:
+- docker needs to be installed in your system
+steps:
 --------------------------------
 BUILD DOCKER IMAGE
 --------------------------------
@@ -63,7 +92,7 @@ To list docker image
 docker images
 '''''''''''''''''''
 Run docker image
-docker run -p 5000:5000 -e PORT=5000 b626bf4e7872  # passing a environment variable port=5000
+docker run -p 5000:5000 -e PORT=5000 <image_id>  # passing a environment variable port=5000
 ''''''''''''''''''''
 Run on web :
 localhost:5000
@@ -74,19 +103,7 @@ docker ps
 Tos stop docker conatiner
 docker stop <container_id>
 '''''''''''''''''''
-
-python setup.py install
-''''''''''''''''''''''''''
-pip install ipykernel
--------------------------------------------
-To setup CI/CD Pipeine in heroku ;
--------------------------------------------
-create a folder .github/workflows
-and file 'main.yaml'
-
-1. HEROKU_EMAIL: <emailid>
-2. HEROKU_API_KEY:<heroku api key>
-3. HEROKU_APP_NAME : stockprice_pred
+**********************************************************
 
 Preface
 'Investment prediction' here vis-a-vis Stock Market prediction  predict the stock's price considering various aspects of the stock market that can influence the price..
